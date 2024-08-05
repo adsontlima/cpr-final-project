@@ -50,3 +50,22 @@ void fundamentals(void) {
 	}
 	printf("*** End of Measuring Strings Demo ***\n\n");					// Statement printed if q is entered.
 }
+
+/* Version 2 */
+
+
+printf("*** Start of Measuring Strings Demo ***\n");    					// Start of Measuring Strings application
+	char buffer2[BUFFER_SIZE];                            				    // Generating a character array named buffer2 with a capacity for 80 characters, including the null terminator.
+	do {                                                   				    // The do/while loop will continue to execute until the value of buffer2 matches "q".
+		printf("Type a string (q - to quit):\n");          
+		fgets(buffer2, BUFFER_SIZE, stdin);                  				// Receives user input and stores it within the "buffer2" array.
+		buffer2[strlen(buffer2) - 1] = '\0';
+		if (strcmp(buffer2, "q") != 0)                       				// Verifies whether the input string is different from "q".
+			printf("The length of the \'%s\' is %d characters\n",  			// Displays the length of the input string.
+				buffer2, (int)strlen(buffer2));
+
+	} while (strcmp(buffer2, "q") != 0);                     				// Iterates until the input string becomes "q".
+	printf("*** End of Measuring Strings Demo ***\n\n");     				// Display a message indicating the end of the function.
+
+
+}
